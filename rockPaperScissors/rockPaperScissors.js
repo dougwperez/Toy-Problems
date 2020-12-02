@@ -18,9 +18,9 @@ player could throw over a three-round game of rock-paper-scissors.
 *
 */
 
-var rockPaperScissors = function (rounds) {
+var rockPaperScissors = function () {
   var results = [];
-  var choices = ['r', 'p', 's'];
+  var choices = ['R', 'P', 'S'];
 
   choices.forEach(function (current1) {
     choices.forEach(function (current2) {
