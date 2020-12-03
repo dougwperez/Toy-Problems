@@ -28,7 +28,8 @@ var evenOccurrence = function (arr) {
   if (evenOccurs.length === 0) {
     return null;
   } else {
-    return evenOccurs[0]
+    var finalValue = parseInt(evenOccurs[0])
+    return  finalValue;
   }
 
 };
