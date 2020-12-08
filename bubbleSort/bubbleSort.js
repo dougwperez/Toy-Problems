@@ -26,13 +26,45 @@
 
 /*
  * Example usage:
- * bubbleSort([2, 1, 3]); // yields [1, 2, 3]
+ *
+ *
+ *
  *
 */
 
 // Feel free to add helper functions if needed.
 
 
-var bubbleSort = function(array) {
+var bubbleSort = function (array) {
   // Your code here.
+  var newArr = []
+  for (var i = 0; i < array.length; i += 2) {
+    var current = array[i]
+    var next = array[i + 1]
+    if (next === undefined) {
+      newArr.push(current)
+      break;
+    }
+    if (current >= next) {
+      newArr.push(next, current)
+    } else {
+      newArr.push(current, next)
+    }
+  }
+  return newArr
 };
+
+
+bubbleSort([2, 1, 3]); // yields [1, 2, 3]
+bubbleSort([2, 1, 3, 8, 1]); // yields [1, 2, 3]
+bubbleSort([4, 6, 3, 12, 2]); // yields [1, 2, 3]
+
+
+//i: array
+//o: array in sorted order
+
+//we want to sort the list in order from least to greatest
+//itereate over the array
+//save current index and next index in seperate variables
+//if the current index is larger than the next index, then switch spaces
+//Make sure to skip two indexes every iteration
