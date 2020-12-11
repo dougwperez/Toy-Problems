@@ -15,6 +15,9 @@
  * This can be implemented using either a recursive ("top-down") or an iterative ("bottom-up") approach.
  *
  * Illustration of an iterative approach:
+
+
+
  *
  *   Initial step: Input array is split into "sorted" sublists
  *   [4,7,4,3,9,1,2] -> [[4],[7],[4],[3],[9],[1],[2]]
@@ -96,7 +99,70 @@
  */
 
 
+// Initial step: Input array is split into "sorted" sublists
+//  *   [4,7,4,3,9,1,2] -> [[4],[7],[4],[3],[9],[1],[2]]
+//  *
+//  *   Merge step: Adjacent sublists are merged into sorted sublists
+//  *   [[4],[7],[4],[3],[9],[1],[2]] -> [[4,7],[3,4],[1,9],[2]]
+//  *
+//  *   Repeat merge step:
+//  *   [[4,7],[3,4],[1,9],[2]] -> [[3,4,4,7], [1,2,9]]
+//  *
+//  *   Repeat merge step:
+//  *   [[3,4,4,7], [1,2,9]] -> [[1,2,3,4,4,7,9]]
+//  *
+//  *   Done! Return the sorted array:
+//  *   [1,2,3,4,4,7,9]
 
-var mergeSort = function(array) {
-  // Your code here.
-};
+
+
+//i: array
+//o: sorted array
+//c:
+//e: if the length of the array is odd, an extra sublist of length 1 will be left after the first merge.
+
+//We want to sort the array in asscending order by splitting up each number in the array into its own 1 unit array. leaving us
+//an array of arrays. Then we want to recombine them by a factor of two, then 4 etc,
+
+//use array.join(',') to create a string of the array.
+// set var new arr, use string.split('') to divide the string into an array of arrays.
+//iterate over new arr, ittrate by two elements at a time.
+
+//iterate over the array with for each.
+//For each element. set it equal to an array, (subArr)
+//iterate over subArr with for loop
+
+
+
+
+
+
+var mergeSort = function (array) {
+
+  var subArr = array.map((num) => {
+    return num = [num]
+  })
+  var groups = [];
+  for (var i = 0; i < subArr.length; i += 2) {
+    // var group = subArr[i].concat(subArr[i+1])
+    //   groups.push(group);
+    if (subArr[i + 1] === undefined) {
+      groups.push(subArr[i])
+    } else {
+      var bunch = subArr[i].concat(subArr[i + 1])
+
+      groups.push(bunch)
+      console.log(subArr[i].concat(subArr[i + 1]))
+    }
+
+  };
+  return groups
+
+}
+
+
+var testOdds = mergeSort([4, 7, 4, 3, 9, 1, 2])
+console.log('testodds', testOdds) //[[1,2,3,4,4,7,9]]
+
+var testEvens = mergeSort([4, 7, 4, 3, 9, 1, 2, 11])
+console.log('testodds', testEvens) //[[1,2,3,4,4,7,9,11]]
