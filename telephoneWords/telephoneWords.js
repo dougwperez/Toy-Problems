@@ -41,6 +41,71 @@ var phoneDigitsToLetters = {
 };
 
 
-var telephoneWords = function(digitString) {
-  // TODO: return every combination that can be spelled on a phone with these digits
+var telephoneWords = function(digitString, lettersOBJ) {
+  var anagram = {}
+  var letters = []
+  
+for (var i = 0; i < digitString.length; i++){
+      letters.push(lettersOBJ[digitString[i]])
+}
+
+var generator = function(text, options){
+  if (text.length === each.length){
+    anagram[text] = true;
+  }
+  for (var k = 0; k < options.length; k++){
+    generator(text + options[k],
+    options.slice(0,k) + options.slice(k+1))
+    //console.log('options', options)
+  }
+}
+
+
+
+for (var j = 0; j< letters.length; j++){
+  var first = letters[0];
+  var second = letters[1];
+  var third = letters[2];
+  var fourth = letters[3];
+  console.log(fourth)
+  var each = letters[j]
+  console.log('each', each)
+  generator('', each);
+}
+
+
+
+return Object.keys(anagram)
+
 };
+
+var helperShuffle = function (deck) {
+  var i = deck.length
+  var j = 0;
+  let temp;
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    temp = deck[i];
+    deck[i] = deck[j]
+    deck[j] = temp;
+  }
+  return deck
+};
+
+var test = telephoneWords('2745', phoneDigitsToLetters)
+console.log(test)
+
+// => ['APGJ',
+//   *        'APGK',
+//   *        'APGL',
+//   *        ..., // many many more of these
+//   *        'CSIL']
+
+//i: string and an object
+//o: array of all combinations
+//c:
+//e: 0 and 1 dont have letters associated with them, so they should be left as numbers.
+
+//set anagram to an empty objeeft
+
