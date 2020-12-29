@@ -1,37 +1,26 @@
+/**
+ * Given a single input string, write a function that produces all possible anagrams
+ * of a string and outputs them as an array. At first, don't worry about
+ * repeated strings.  What time complexity is your solution?
+ *
+ * Extra credit: Deduplicate your return array without using uniq().
+ */
+
+/**
+  * example usage:
+  * var anagrams = allAnagrams('abc');
+  * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+  */
+
+var allAnagrams = function (string) {
+  // Your code here.
 
 
-//i: sorted array
-//o: shuffled Array
-//c:
-//e:
-
-
-
-// Ordered deck generator provided for your testing convenience
-// (You may alter this function, but an unaltered copy will be used for tests.)
-
-
-var orderedDeck = function () {
-  var suits = ['♥', '♣', '♠', '♦'];
-  var values = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
-  var deck = [];
-
-  suits.forEach(function (suit) {
-    values.forEach(function (value) {
-      deck.push(value + suit);
-    });
-  });
-
-  return deck;
+  var inputArr = string.split('')
+  inputArr.so
 };
 
-
-// console.log('test', test)
-
-var sorted = orderedDeck()
-
-console.log('sorted', sorted)
-var shuffleDeck = function (deck) {
+var helperShuffle = function (deck) {
   var i = deck.length
   var j = 0;
   let temp;
@@ -45,16 +34,33 @@ var shuffleDeck = function (deck) {
   return deck
 };
 
-console.log('Result', shuffleDeck(sorted))
 
 
-//define var for deck.length j = 0, and a temp
-//while subtracting 1 from array.length each time.
-    //assign j to a random number function
-    //temp is set to array[i]
+//i: string
+//o: array of strings
+//c:
+//e: empty string, numbers?
+
+var test1 = allAnagrams('abc')
+console.log(test1) // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+
+// 1 char = 1 set up
+// 2char - 2 setups
+// 3char - 6 set ups
+// 4char -
 
 
 
+//explanation:We want to find all of the different possible combinations of the string.
+//justificiation:
 
+//create an obj
+
+//set up a shuffler helper function
+//allAnagrams function
+//create store obj
+//create var data array, use split to convert string into an array
+//call shuffle function on array
+//add the list of calls to the array
 
 
