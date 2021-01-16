@@ -16,14 +16,14 @@
  *
  * example 2:
  *
- * var func = function(a, b){ return a + b };
- * var boundFunc = bind(func, null, 'foo');
- * var result = boundFunc('bar');
- * result === 'foobar'; // true
+  var func = function(a, b){ return a + b };
+  var boundFunc = bind(func, null, 'foo');
+  var result = boundFunc('bar');
+  result === 'foobar'; // true
  *
 */
 
-var bind = function(
+var bind = function (
 ) {
   // TODO: Your code here
 };
@@ -53,7 +53,7 @@ var bind = function(
  *
 */
 
-Function.prototype.bind = function(
+Function.prototype.bind = function (
 ) {
   // TODO: Your code here
 };
