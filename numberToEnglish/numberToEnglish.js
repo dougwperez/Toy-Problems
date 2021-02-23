@@ -2,9 +2,9 @@
 * Extend the Number prototype with a new method called `toEnglish`.
 * It should return the number as a string using English words.
 * Examples:
-*   (7).toEnglish(); // > "seven"
-*   (575).toEnglish(); // > "five hundred seventy-five"
-*   (78193512).toEnglish(); // > "seventy-eight million one hundred ninety-three thousand five hundred twelve"
+  (7).toEnglish(); // > "seven"
+  (575).toEnglish(); // > "five hundred seventy-five"
+  (78193512).toEnglish(); // > "seventy-eight million one hundred ninety-three thousand five hundred twelve"
 *
 * Extra credit: Make your function support decimals.
 * Example:
@@ -55,4 +55,28 @@ var numbersToPlace = {
 
 Number.prototype.toEnglish = function () {
   // return my value as english words
+  if (numbersToWords[this]) {
+    return numbersToWords[this];
+  }
+  if (!numbersToWords[this]) {
+    conosole.log(this.length)
+  }
+
+
 };
+
+
+console.log((7).toEnglish()); // > "seven"
+console.log((75).toEnglish()); // > "seven"
+console.log((575).toEnglish()); // > "five hundred seventy-five"
+console.log((78193512).toEnglish()); // > "seventy-eight million one hundred ninety-three thousand five hundred twelve"
+
+
+  //input: number
+  //output: string
+  //c:
+  //e:
+
+  //deal with case that a number can be directly found in the numbersToWords object
+
+
