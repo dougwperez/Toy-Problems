@@ -13,6 +13,8 @@
  * inputs well.
  */
 
+//TEST COMMIT
+
 var longestRun = function (string) {
   // TODO: Your code here!
 };
@@ -20,8 +22,8 @@ var longestRun = function (string) {
 // If you need a random string generator, use this!
 // (you wont need this function for your solution but it may help with testing)
 var randomString = function (len) {
-  var text = '';
-  var possible = 'abcdefghijklmnopqrstuvwxyz';
+  var text = "";
+  var possible = "abcdefghijklmnopqrstuvwxyz";
 
   for (var i = 0; i < len; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
